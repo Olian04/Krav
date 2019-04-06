@@ -1,4 +1,4 @@
-# Krav
+# Krav [`[kra:v]`](http://lexin.nada.kth.se/sound/v2/217164_1.mp3)
 
 _Krav = swedish for "requirement", "demand", "claim", "insistence", etc_
 
