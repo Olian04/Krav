@@ -66,11 +66,14 @@ assert('dev', K =>
 Note: `assert` and `expect` could be aliases of eachother, and both could implement both APIs with 2 different overloads each.<br>
 Ex: 
 ```js
-const { expect, assert } = require('Krav');
+const { expect, assert, assume } = require('Krav');
 
 expect('dev').String
 expect('dev', R => R.String)
 
 assert('dev').String
 assert('dev', R => R.String)
+
+assume('dev').String
+assume('dev', R => R.String)
 ```
