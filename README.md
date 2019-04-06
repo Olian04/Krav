@@ -66,6 +66,13 @@ assume('dev', R => R.String)
 ```js
 const { assert, K } = require('Krav');
 
+// These two are the exact same constraint-wise
+
+expect(someValue)
+  .Object
+  .Values
+  .Number
+
 expect(someValue)
   .to.be.an.Object
   .where.the.Values
