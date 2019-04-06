@@ -1,4 +1,6 @@
-# Krav (swedish for "requirement")
+# Krav
+
+_Krav = swedish for "requirement", "demand", "claim", "insistence", etc_
 
 Home of the soon to be [assertion library based of off the assertion logic from Recordari](https://github.com/Olian04/Recordari/issues/39)
 
