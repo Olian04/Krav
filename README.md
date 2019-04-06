@@ -79,6 +79,7 @@ expect(someValue)
   .are.of.type.Number
 
 // Constraints begin with a capital letter & dummy constraints begin with a small leter.
+// Note: Currently "or", "and" & "not" are valid constraits that start with a small leter
 );
 ```
 
