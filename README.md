@@ -10,8 +10,15 @@ Home of the soon to be [assertion library based of off the assertion logic from 
 const { assert, K } = require('Krav');
 // assert(someValue, ...constraints)
 
-const someVariable = ...
-assert(someVariable,
+assert('dev',
   K.String.Either(['dev', 'prod'])
-);
+); // true
+
+assert('prod',
+  K.String.Either(['dev', 'prod'])
+); // true
+
+assert('staging',
+  K.String.Either(['dev', 'prod'])
+); // false
 ```
