@@ -23,28 +23,12 @@ assert('staging',
 ); // false
 ```
 
-## Possible Improvements
+## Improvements on Recordari API
 
-1. Add dummy constraits (much like chai does) to increase readability of constraits
-```js
-const { assert, K } = require('Krav');
-
-// The following two asserts should either both fail or both succeed.
-
-const someValue = ...
-assert(someValue,
-  K.should.be.a.String.and.Either(['dev', 'prod'])
-);
-
-assert(someValue,
-  K.String.Either(['dev', 'prod'])
-);
-```
-
-2. Make sure Krav works with libraries such as Mocha and Jest. Maybe look into how Chai does it? <br>
+1. Make sure Krav works with libraries such as Mocha and Jest. Maybe look into how Chai does it? <br>
 This might be it https://github.com/chaijs/assertion-error
 
-3. Shift around the API to look more like chai `expect`.
+2. Shift around the API to look more like chai `expect`.
 ```js
 const { expect } = require('Krav');
 
@@ -76,6 +60,19 @@ assert('dev', R => R.String)
 
 assume('dev').String
 assume('dev', R => R.String)
+```
+
+3. Add dummy constraits (much like chai does) to increase readability of constraits
+```js
+const { assert, K } = require('Krav');
+
+expect(someValue)
+  .to.be.an.Object
+  .where.the.Values
+  .are.of.type.Number
+
+// Constraints begin with a capital letter & dummy constraints begin with a small leter.
+);
 ```
 
 ## Docs
