@@ -7,11 +7,11 @@ Home of the soon to be [assertion library based of off the assertion logic from 
 ## Demo
 
 ```js
-const { assert, R } = require('Krav');
+const { assert, K } = require('Krav');
 // assert(someValue, ...constraints: R[])
 
 const someVariable = ...
 assert(someVariable,
-  R.String.Either(['dev', 'prod'])
+  K.String.Either(['dev', 'prod'])
 );
 ```
