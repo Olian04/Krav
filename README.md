@@ -43,3 +43,34 @@ assert(someValue,
 
 2. Make sure Krav works with libraries such as Mocha and Jest. Maybe look into how Chai does it? <br>
 This might be it https://github.com/chaijs/assertion-error
+
+3. Shift around the API to look more like chai `expect`.
+```js
+const { expect } = require('Krav');
+
+expect('dev')
+  .String
+  .Either(['dev', 'prod'])
+```
+Requires major restructuring of the implementation. <br>
+Currently `R.String.Exact('dev')` constructs something like an AST that the assertion method later will run. <br>
+For this API change to happen, `expect().String.Exact('dev')` would have to emidiatly evaluate `String` and then if that succeeds emidiatly evaluate `Exact('dev')`. <br>
+If we do rewrite it like this, then the assert API from above would look like this:
+```js
+const { assert } = require('Krav');
+
+assert('dev', K =>
+  K.String.Either(['dev', 'prod'])
+);
+```
+Note: `assert` and `expect` could be aliases of eachother, and both could implement both APIs with 2 different overloads each.<br>
+Ex: 
+```js
+const { expect, assert } = require('Krav');
+
+expect('dev').String
+expect('dev', R => R.String)
+
+assert('dev').String
+assert('dev', R => R.String)
+```
