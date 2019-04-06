@@ -8,7 +8,7 @@ Home of the soon to be [assertion library based of off the assertion logic from 
 
 ```js
 const { assert, K } = require('Krav');
-// assert(someValue, constraints)
+// assert(someValue, ...constraints)
 
 const someVariable = ...
 assert(someVariable,
