@@ -77,3 +77,7 @@ assert('dev', R => R.String)
 assume('dev').String
 assume('dev', R => R.String)
 ```
+
+## Docs
+
+See https://github.com/Olian04/Recordari/blob/master/docs/constraints.md for future reference
