@@ -37,4 +37,5 @@ action "Increment_prerelease_version" {
   uses = "actions/npm@master"
   needs = ["Test"]
   args = "version prerelease"
+  secrets = ["GITHUB_TOKEN"]
 }
