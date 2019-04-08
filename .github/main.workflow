@@ -5,7 +5,7 @@ workflow "CI - OnPush" {
   resolves = [
     "Lint",
     "Coverage",
-    "GitHub Action for npm",
+    "Increment_prerelease_version",
   ]
 }
 
@@ -33,7 +33,7 @@ action "Coverage" {
   args = "run coverage"
 }
 
-action "Increment prerelease version" {
+action "Increment_prerelease_version" {
   uses = "actions/npm@master"
   needs = ["Test"]
   args = "version prerelease"
