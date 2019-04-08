@@ -5,6 +5,7 @@ workflow "CI - OnPush" {
   resolves = [
     "Lint",
     "Coverage",
+    "Test",
   ]
 }
 
