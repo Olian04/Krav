@@ -28,6 +28,6 @@ action "Test" {
 action "Coverage" {
   needs = ["Test"]
   uses = "actions/npm@master"
-  #secrets = ["CODECOV_TOKEN"]
-  runs = "test"
+  secrets = ["CODECOV_TOKEN"]
+  args = "run coverage"
 }
