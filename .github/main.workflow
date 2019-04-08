@@ -1,6 +1,9 @@
 workflow "CI - OnPush" {
   on = "push"
-  resolves = ["Lint", "Test"]
+  resolves = [
+    "Lint",
+    "Coverage",
+  ]
 }
 
 action "Install" {
@@ -20,5 +23,9 @@ action "Test" {
   args = "test"
 }
 
-
-
+action "Coverage" {
+  uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
+  needs = ["Test"]
+  secrets = ["CODECOV_TOKEN"]
+  runs = "coverage"
+}
