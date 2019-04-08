@@ -5,7 +5,7 @@ export const expectToFail = (shouldFail: boolean, cb: () => void) => {
   try {
     cb();
     failed = false;
-  } catch {
+  } catch (e) {
     failed = true;
   }
 

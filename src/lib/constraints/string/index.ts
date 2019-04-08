@@ -18,7 +18,7 @@ const builder = (target: string, isInverted: boolean) => ({
   Exact(value: string) {
     assertHelper({
       isInverted,
-      assertion: target !== value,
+      assertion: target === value,
       errorMessage: `Expected ${target} to equal ${value}`,
     });
     return builder(target, isInverted);
@@ -29,7 +29,7 @@ const builder = (target: string, isInverted: boolean) => ({
   Either(options: string[]) {
     assertHelper({
       isInverted,
-      assertion: options.indexOf(target) === -1,
+      assertion: options.indexOf(target) !== -1,
       errorMessage: `Expected ${target} to equal one of [${options.map((v) => '"' + v + '"').join(', ')}]`,
     });
     return builder(target, isInverted);
@@ -37,7 +37,7 @@ const builder = (target: string, isInverted: boolean) => ({
   StartsWith(value: string) {
     assertHelper({
       isInverted,
-      assertion: !target.startsWith(value),
+      assertion: target.startsWith(value),
       errorMessage: `Expected ${target} to start with ${value}`,
     });
     return builder(target, isInverted);
@@ -45,7 +45,7 @@ const builder = (target: string, isInverted: boolean) => ({
   EndsWith(value: string) {
     assertHelper({
       isInverted,
-      assertion: !target.endsWith(value),
+      assertion: target.endsWith(value),
       errorMessage: `Expected ${target} to end with ${value}`,
     });
     return builder(target, isInverted);
@@ -53,7 +53,7 @@ const builder = (target: string, isInverted: boolean) => ({
   Matches(regex: RegExp) {
     assertHelper({
       isInverted,
-      assertion: !regex.test(target),
+      assertion: regex.test(target),
       errorMessage: `Expected ${target} to match ${regex}`,
     });
     return builder(target, isInverted);
