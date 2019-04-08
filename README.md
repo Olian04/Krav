@@ -1,3 +1,5 @@
+__WIP NOTICE:__ Krav is very much still a WIP and in no condition to be used by anyone!
+
 # Krav [`[kra:v]`](http://lexin.nada.kth.se/sound/v2/217164_1.mp3)
 
 _Krav = swedish for "requirement" or "demand"_
