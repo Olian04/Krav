@@ -6,19 +6,10 @@
         "outDir": "dist/",
         "declaration": true,
         "strict": true,
-        "alwaysStrict": true,
-        "baseUrl": ".",
-        "paths": {
-          "@util/*": [
-            "src/util/*"
-          ],
-          "@/*": [
-            "src/lib/*"
-          ],
-        }
+        "alwaysStrict": true
     },
     "include": [
-        "src/**/*.ts"
+        "src/**/*.ts",
     ],
     "exclude": [
         "src/**/*.spec.ts",

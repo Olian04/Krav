@@ -10,7 +10,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "nyc --check-coverage --functions 100 --reporter=lcov --reporter=text-summary --extension .ts mocha --recursive -r ts-node/register 'src/**/*.spec.ts' ",
+    "test": "nyc --check-coverage --functions 100 --reporter=lcov --reporter=text --extension .ts mocha --recursive -r ts-node/register 'src/**/*.spec.ts' ",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov --token=f3e31ed4-f58a-4b46-8a5e-a3f2b394f927",
     "build": "tsc",
     "lint": "tslint --fix -c ./tslint.json 'src/**/*{.ts,.tsx}'",
@@ -52,5 +52,8 @@
     "tslint": "^5.11.0",
     "typescript": "^3.1.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@types/assertion-error": "^1.1.0",
+    "assertion-error": "^1.1.0"
+  }
 }

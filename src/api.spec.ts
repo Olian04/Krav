@@ -1,16 +1,13 @@
 import { expect } from 'chai';
-import { foo } from './api';
+import * as krav from './api';
 
-describe('api.foo', () => {
-  it('typeof foo === function', () => {
-    expect(typeof foo).to.equal('function');
+describe('api', () => {
+  it('assert === expect === assume', () => {
+    expect(krav.assert)
+      .to.equal(krav.assume)
+      .to.equal(krav.expect);
   });
-  it('foo(string) -> OK', () => {
-    try {
-      foo('lol');
-      expect.fail();
-    } catch {
-      expect(true).true;
-    }
+  it('assert is a function', () => {
+    expect(typeof krav.assert).to.equal('function');
   });
 });
