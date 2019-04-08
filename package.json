@@ -12,10 +12,13 @@
   "scripts": {
     "test": "nyc --check-coverage --functions 100 --reporter=lcov --reporter=text --extension .ts mocha --recursive -r ts-node/register 'src/**/*.spec.ts' ",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "prebuild": "npm run test && npm run lint:nofix",
     "build": "tsc",
     "lint": "tslint --fix -c ./tslint.json 'src/**/*{.ts,.tsx}'",
     "lint:nofix": "tslint -c ./tslint.json 'src/**/*{.ts,.tsx}'",
-    "prepublishOnly": "npm run lint && npm run build"
+    "prepublishOnly": "npm run build",
+    "prepublish:canary": "npm run build && npm version prerelease",
+    "publish:canary": "npm publish --access public --tag canary"
   },
   "nyc": {
     "exclude": [
@@ -41,6 +44,7 @@
   },
   "homepage": "https://github.com/Olian04/Krav#readme",
   "devDependencies": {
+    "@types/assertion-error": "^1.1.0",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.1",
@@ -53,7 +57,6 @@
     "typescript": "^3.1.4"
   },
   "dependencies": {
-    "@types/assertion-error": "^1.1.0",
     "assertion-error": "^1.1.0"
   }
 }
