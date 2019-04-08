@@ -17,7 +17,7 @@
     "lint": "tslint --fix -c ./tslint.json 'src/**/*{.ts,.tsx}'",
     "lint:nofix": "tslint -c ./tslint.json 'src/**/*{.ts,.tsx}'",
     "prepublishOnly": "npm run build",
-    "prepublish:canary": "npm run build && npm version prerelease",
+    "prepublish:canary": "npm version prerelease",
     "publish:canary": "npm publish --access public --tag canary"
   },
   "nyc": {
