@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "nyc --check-coverage --functions 100 --reporter=lcov --reporter=text --extension .ts mocha --recursive -r ts-node/register 'src/**/*.spec.ts' ",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov --token=f3e31ed4-f58a-4b46-8a5e-a3f2b394f927",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "build": "tsc",
     "lint": "tslint --fix -c ./tslint.json 'src/**/*{.ts,.tsx}'",
     "lint:nofix": "tslint -c ./tslint.json 'src/**/*{.ts,.tsx}'",
