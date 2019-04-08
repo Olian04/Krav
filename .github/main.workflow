@@ -5,6 +5,7 @@ workflow "CI - OnPush" {
   resolves = [
     "Lint",
     "Coverage",
+    "GitHub Action for npm",
   ]
 }
 
@@ -30,4 +31,10 @@ action "Coverage" {
   uses = "actions/npm@master"
   secrets = ["CODECOV_TOKEN"]
   args = "run coverage"
+}
+
+action "Increment prerelease version" {
+  uses = "actions/npm@master"
+  needs = ["Test"]
+  args = "version prerelease"
 }
