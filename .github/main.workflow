@@ -29,5 +29,5 @@ action "Coverage" {
   needs = ["Test"]
   uses = "actions/npm@master"
   secrets = ["CODECOV_TOKEN"]
-  runs = "run coverage"
+  runs = "test"
 }
