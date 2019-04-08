@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2018",
+        "sourceMap": true,
+        "outDir": "dist/",
+        "declaration": true,
+        "strict": true,
+        "alwaysStrict": true,
+        "baseUrl": ".",
+        "paths": {
+          "@util/*": [
+            "src/util/*"
+          ],
+          "@/*": [
+            "src/lib/*"
+          ],
+        }
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "src/**/*.spec.ts",
+        "node_modules"
+    ]
+}

@@ -1,0 +1,56 @@
+{
+  "name": "krav",
+  "version": "0.1.0",
+  "description": "Yet another assertion library",
+  "main": "dist/api.js",
+  "types": "dist/api.d.ts",
+  "directories": {
+    "example": "demo",
+    "lib": "src",
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "nyc --check-coverage --functions 100 --reporter=lcov --reporter=text-summary --extension .ts mocha --recursive -r ts-node/register 'src/**/*.spec.ts' ",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov --token=f3e31ed4-f58a-4b46-8a5e-a3f2b394f927",
+    "build": "tsc",
+    "lint": "tslint --fix -c ./tslint.json 'src/**/*{.ts,.tsx}'",
+    "lint:nofix": "tslint -c ./tslint.json 'src/**/*{.ts,.tsx}'",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.ts"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olian04/Krav.git"
+  },
+  "keywords": [
+    "assert",
+    "assertion",
+    "expect",
+    "assume",
+    "test",
+    "testing"
+  ],
+  "author": "Olian04",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Olian04/Krav/issues"
+  },
+  "homepage": "https://github.com/Olian04/Krav#readme",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.1",
+    "chai": "^4.2.0",
+    "codecov": "^3.1.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.4"
+  },
+  "dependencies": {}
+}
