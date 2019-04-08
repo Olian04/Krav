@@ -1,8 +1,9 @@
+import * as AssertionError from 'assertion-error';
 import { assertHelper } from '../../../util/assert-error';
 
 export const NumberConstraint = (target: unknown, isInverted: boolean) => {
   if ( !guard(target) ) {
-    throw new Error(`Expected ${target} to be of type Number`);
+    throw new AssertionError(`Expected ${target} to be of type Number`);
   }
   return builder(target, isInverted);
 };
