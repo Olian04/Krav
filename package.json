@@ -1,6 +1,6 @@
 {
   "name": "krav",
-  "version": "0.1.1-3",
+  "version": "0.1.0-0",
   "description": "Yet another assertion library",
   "main": "dist/api.js",
   "types": "dist/api.d.ts",
