@@ -5,7 +5,7 @@ workflow "CI - OnPush" {
   resolves = [
     "Lint",
     "Coverage",
-    "Increment_prerelease_version",
+    "Test",
   ]
 }
 
@@ -31,11 +31,4 @@ action "Coverage" {
   uses = "actions/npm@master"
   secrets = ["CODECOV_TOKEN"]
   args = "run coverage"
-}
-
-action "Increment_prerelease_version" {
-  uses = "actions/npm@master"
-  needs = ["Test"]
-  args = "version prerelease"
-  secrets = ["GITHUB_TOKEN"]
 }
