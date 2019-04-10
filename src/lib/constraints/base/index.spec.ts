@@ -17,6 +17,11 @@ describe('BaseConstraint', () => {
       krav.assert(false).Boolean,
     );
   });
+  it('assert(regex).Regex', () => {
+    expectToFail(false, () =>
+      krav.assert(/foo/).Regex,
+    );
+  });
   it('assert(any).fail()', () => {
     expectToFail(true, () =>
       krav.assert(null).fail(),

@@ -2,6 +2,7 @@ import * as AssertionError from 'assertion-error';
 import {
   BooleanConstraint,
   NumberConstraint,
+  RegexConstraint,
   StringConstraint,
 } from '..';
 
@@ -20,6 +21,9 @@ const builder = (target: unknown, isInverted: boolean) =>  ({
   },
   get Boolean() {
     return BooleanConstraint(target, isInverted);
+  },
+  get Regex() {
+    return RegexConstraint(target, isInverted);
   },
   fail() {
     throw new AssertionError('forced FAIL due to call to BaseConstraint.fail()');
