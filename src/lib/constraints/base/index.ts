@@ -1,4 +1,6 @@
+import * as AssertionError from 'assertion-error';
 import {
+  BooleanConstraint,
   NumberConstraint,
   StringConstraint,
 } from '..';
@@ -15,5 +17,14 @@ const builder = (target: unknown, isInverted: boolean) =>  ({
   },
   get Number() {
     return NumberConstraint(target, isInverted);
+  },
+  get Boolean() {
+    return BooleanConstraint(target, isInverted);
+  },
+  fail() {
+    throw new AssertionError('forced FAIL due to call to BaseConstraint.fail()');
+  },
+  pass(): void {
+    // forced PASS due to call to BaseConstraint.pass()
   },
 });

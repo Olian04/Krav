@@ -7,9 +7,24 @@ describe('BaseConstraint', () => {
       krav.assert(12).Number,
     );
   });
-  it('not assert(string).String', () => {
+  it('assert(string).String', () => {
     expectToFail(false, () =>
       krav.assert('foo').String,
+    );
+  });
+  it('assert(boolean).Boolean', () => {
+    expectToFail(false, () =>
+      krav.assert(false).Boolean,
+    );
+  });
+  it('assert(any).fail()', () => {
+    expectToFail(true, () =>
+      krav.assert(null).fail(),
+    );
+  });
+  it('assert(any).pass()', () => {
+    expectToFail(false, () =>
+      krav.assert(null).pass(),
     );
   });
 });
