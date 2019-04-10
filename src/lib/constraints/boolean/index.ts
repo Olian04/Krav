@@ -18,7 +18,7 @@ const builder = (target: boolean, isInverted: boolean) => ({
     assertHelper({
       isInverted,
       assertion: target === true,
-      errorMessage: `Expected ${target} to true`,
+      errorMessage: `Expected ${target} to be true`,
     });
     return builder(target, isInverted);
   },
@@ -26,7 +26,7 @@ const builder = (target: boolean, isInverted: boolean) => ({
     assertHelper({
       isInverted,
       assertion: target === false,
-      errorMessage: `Expected ${target} to false`,
+      errorMessage: `Expected ${target} to be false`,
     });
     return builder(target, isInverted);
   },
