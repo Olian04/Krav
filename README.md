@@ -6,7 +6,7 @@ __WIP NOTICE:__ Krav is very much still a WIP and in no condition to be used by 
 ![](https://img.shields.io/npm/l/krav.svg) <br>
 ![](https://img.shields.io/npm/types/krav.svg)
 [![codecov](https://img.shields.io/codecov/c/gh/olian04/krav.svg)](https://codecov.io/gh/Olian04/Krav)
-[![CI Status](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/Olian04/Krav?label=CI+Status)](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/results/Olian04/Krav)
+[![pipeline](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/olian04/krav?label=pipeline)](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/results/olian04/krav)
 
 # Krav [`[kra:v]`](http://lexin.nada.kth.se/sound/v2/217164_1.mp3)
 
