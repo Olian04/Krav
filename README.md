@@ -17,9 +17,9 @@ const { expect, assert, assume } = require('Krav');
 
 expect(someValue).String.Length.Min(2);
 
-expect(someValue).String.Either(['hi', 'hello']);
+assert(someValue).String.Either(['hi', 'hello']);
 
-expect(someValue).String.Exact('blueberry');
+assume(someValue).String.Exact('blueberry');
 ```
 
 ## Docs
